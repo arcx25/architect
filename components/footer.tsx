@@ -2,16 +2,16 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-card/50">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-primary/30">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="h-4 w-4 text-primary-foreground"
+                  className="h-4 w-4 text-primary"
                   aria-hidden="true"
                 >
                   <path
@@ -24,116 +24,117 @@ export function Footer() {
                 </svg>
               </div>
               <span className="text-lg font-bold text-foreground">
-                PyMarket
+                ARCHITECT
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              The modern marketplace for discovering and exploring Python
-              packages.
+              Anonymous Python marketplace with Monero escrow. All transactions
+              secured via XMR multisig.
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Browse</h3>
+            <h3 className="text-sm font-semibold text-foreground">Marketplace</h3>
             <ul className="mt-3 flex flex-col gap-2">
               <li>
                 <Link
-                  href="/packages"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  All Packages
+                  All Listings
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages?category=web-frameworks"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=scrapers"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  Web Frameworks
+                  Scrapers
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages?category=data-science"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=bots"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  Data Science
+                  Bots
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages?category=machine-learning"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=ai-ml"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  Machine Learning
+                  AI / ML
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-foreground">
-              Categories
-            </h3>
+            <h3 className="text-sm font-semibold text-foreground">Categories</h3>
             <ul className="mt-3 flex flex-col gap-2">
               <li>
                 <Link
-                  href="/packages?category=devops"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=automation"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  DevOps
+                  Automation
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages?category=testing"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=networking"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  Testing
+                  Networking
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages?category=cli-tools"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=crypto"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  CLI Tools
+                  Crypto
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages?category=database"
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  href="/browse?category=osint"
+                  className="text-sm text-muted-foreground hover:text-primary"
                 >
-                  Database
+                  OSINT
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-foreground">
-              Resources
-            </h3>
+            <h3 className="text-sm font-semibold text-foreground">Escrow</h3>
             <ul className="mt-3 flex flex-col gap-2">
               <li>
                 <span className="text-sm text-muted-foreground">
-                  Documentation
+                  XMR Multisig 2/3
                 </span>
               </li>
               <li>
                 <span className="text-sm text-muted-foreground">
-                  API Reference
+                  Dispute Resolution
                 </span>
               </li>
               <li>
                 <span className="text-sm text-muted-foreground">
-                  Community
+                  PGP Verified Vendors
+                </span>
+              </li>
+              <li>
+                <span className="text-sm text-muted-foreground">
+                  Canary Warrant
                 </span>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-10 border-t border-border pt-6">
-          <p className="text-center text-sm text-muted-foreground">
-            PyMarket. Built for the Python community.
+        <div className="mt-10 border-t border-border pt-6 text-center">
+          <p className="text-sm text-muted-foreground">
+            ARCHITECT. All transactions via Monero escrow. No logs. No traces.
           </p>
         </div>
       </div>
