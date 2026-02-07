@@ -29,10 +29,14 @@ function StarRating({ rating }: { rating: number }) {
 
 export function ListingCard({ listing }: { listing: Listing }) {
   return (
-    <Link
-      href={`/listing/${listing.id}`}
-      className="group flex flex-col rounded-lg border border-border bg-card p-5 card-hover"
-    >
+    <div className="group relative flex flex-col rounded-lg border border-border bg-card p-5 card-hover">
+      <Link
+        href={`/listing/${listing.id}`}
+        className="absolute inset-0 z-10 rounded-lg"
+        aria-label={`View ${listing.title}`}
+      >
+        <span className="sr-only">View listing</span>
+      </Link>
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-md border border-primary/20 bg-primary/5 font-mono text-sm font-bold text-primary">
@@ -42,12 +46,9 @@ export function ListingCard({ listing }: { listing: Listing }) {
             <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
               {listing.title}
             </h3>
-            <Link
-              href={`/vendor/${listing.vendorId}`}
-              className="text-xs text-muted-foreground hover:text-primary"
-            >
+            <span className="text-xs text-muted-foreground">
               @{listing.vendor}
-            </Link>
+            </span>
           </div>
         </div>
         {listing.featured && (
@@ -80,6 +81,6 @@ export function ListingCard({ listing }: { listing: Listing }) {
           {listing.xmrPrice}
         </span>
       </div>
-    </Link>
+    </div>
   )
 }
