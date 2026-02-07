@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,13 +15,15 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "PyMarket - Python Package Marketplace",
+  title: "ARCHITECT - XMR Python Marketplace",
   description:
-    "Discover, browse, and explore Python packages. A modern marketplace for the Python ecosystem.",
+    "Anonymous Python marketplace with Monero escrow. Buy and sell Python scripts, tools, bots, and packages securely.",
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
+  themeColor: "#0d0712",
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -30,9 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )

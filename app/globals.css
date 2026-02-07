@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 240 6% 4%;
-    --foreground: 0 0% 96%;
-    --card: 240 5% 8%;
-    --card-foreground: 0 0% 96%;
-    --popover: 240 5% 8%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 210 52% 44%;
+    --background: 265 25% 4%;
+    --foreground: 300 5% 93%;
+    --card: 265 20% 7%;
+    --card-foreground: 300 5% 93%;
+    --popover: 265 20% 7%;
+    --popover-foreground: 300 5% 93%;
+    --primary: 338 100% 59%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 46 97% 61%;
-    --secondary-foreground: 240 6% 4%;
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 4% 58%;
-    --accent: 46 97% 61%;
-    --accent-foreground: 240 6% 4%;
+    --secondary: 265 15% 12%;
+    --secondary-foreground: 300 5% 85%;
+    --muted: 265 12% 14%;
+    --muted-foreground: 265 8% 50%;
+    --accent: 328 80% 48%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 210 52% 44%;
-    --radius: 0.625rem;
+    --border: 338 25% 15%;
+    --input: 265 15% 12%;
+    --ring: 338 100% 59%;
+    --radius: 0.5rem;
   }
 }
 
@@ -33,5 +33,34 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    text-shadow: 0 0 7px hsl(338 100% 59% / 0.6), 0 0 20px hsl(338 100% 59% / 0.3), 0 0 40px hsl(338 100% 59% / 0.15);
+  }
+  .neon-border {
+    box-shadow: 0 0 8px hsl(338 100% 59% / 0.25), inset 0 0 8px hsl(338 100% 59% / 0.08);
+  }
+  .neon-border-subtle {
+    box-shadow: 0 0 4px hsl(338 100% 59% / 0.15);
+  }
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px hsl(338 100% 59% / 0.3), 0 8px 24px hsl(265 25% 4% / 0.6);
+    border-color: hsl(338 100% 59% / 0.4);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(338 100% 65%), hsl(328 80% 55%), hsl(300 60% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
